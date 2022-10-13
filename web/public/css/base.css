@@ -1,0 +1,25 @@
+:root{
+    --cor-fonte-titulo: rgba(2, 64, 89, 1);
+    --cor-textures-2-rgba: rgba(1, 89, 80, 1);
+    --cor-rodape: rgba(2, 114, 94, 1);
+    --cor-login: rgba(2, 140, 62, 1);
+    --cor-claro: rgba(12, 242, 92, 1);
+    --cor-barra-lateral: rgba(12, 242, 92, .5);
+
+    --fonte-titulo: 'Alkalami', serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body, .conteudo{
+    height: 100vh;
+}
+
+@media screen and (max-width: 768px) {
+    .hidden-mobile{
+        display: none;
+    }
+}
