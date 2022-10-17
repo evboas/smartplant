@@ -15,9 +15,9 @@ class PlantasController extends Controller
      */
     public function index()
     {
-        $planta = Planta::all();
+        $plantas = Planta::all();
 
-        return view('planta.index')->with('planta', $planta);
+        return view('planta.index')->with('plantas', $plantas);
     }
 
     /**

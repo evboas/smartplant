@@ -1,0 +1,22 @@
+.conteudo__cards{
+    display: flex;
+}
+
+.card__planta{
+    border: solid 1.5px #000000;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: .5rem;
+    width: 30%;
+}
+
+.card__planta:hover{
+    border: solid 2.5px #000000;
+}
+
+.card__planta-identificacao{
+    align-self: center;
+    text-align: center;
+}

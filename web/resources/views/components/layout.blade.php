@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/template.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/cadastroPlanta.css') }}">
     <link rel="stylesheet" href="{{ asset('css/anotacoes.css') }}">
     <link rel="stylesheet" href="{{ asset('css/sobre.css') }}">
@@ -38,7 +39,7 @@
                     <a href="/planta/criar" class="barra-lateral__link">Cadastrar</a>
                 </li>
                 <li class="barra-lateral__item">
-                    <a href="/anotacoes" class="barra-lateral__link">Observações</a>
+                    <a href="/anotacoes" class="barra-lateral__link">Anotações</a>
                 </li>
                 <li class="barra-lateral__item">
                     <a href="/sobre" class="barra-lateral__link">Sobre</a>
