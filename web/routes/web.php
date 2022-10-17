@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnotacoesController;
 use App\Http\Controllers\PlantasController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,4 +23,6 @@ Route::get('/sobre', function(){
     return view('sobre.index');
 });
 
+Route::get('/anotacoes', [AnotacoesController::class, 'index']);
 Route::get('/planta/criar', [PlantasController::class, 'create']);
+Route::post('/planta/salvar', [PlantasController::class, 'store']);

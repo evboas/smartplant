@@ -6,3 +6,10 @@
 .formulario_container{
     margin: 1rem;
 }
+
+.envia__formulario{
+    align-self: center;
+    height: 3rem;
+    margin-top: 2rem;
+    width: 5rem;
+}

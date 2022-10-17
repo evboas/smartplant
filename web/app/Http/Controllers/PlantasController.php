@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PlantasController extends Controller
 {
@@ -13,7 +14,9 @@ class PlantasController extends Controller
      */
     public function index()
     {
-        return view('planta.index');
+        $planta = DB::select('SELECT (nome, tipo) FROM planta;');
+
+        return view('planta.index')->with('planta', $planta);
     }
 
     /**
@@ -34,7 +37,11 @@ class PlantasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nomePlanta = $request->input('identificacao_planta');
+        $tipoPlanta = $request->input('tipo_planta');
+
+        DB::insert('INSERT INTO planta (nome, tipo) VALUES (?, ?)', [$nomePlanta, $tipoPlanta]);
+        return redirect('/');
     }
 
     /**
