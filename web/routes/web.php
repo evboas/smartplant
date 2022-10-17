@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PlantasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home.index');
+    return view('planta.index');
 });
 
 Route::get('/sobre', function(){
     return view('sobre.index');
 });
+
+Route::get('/planta/criar', [PlantasController::class, 'create']);

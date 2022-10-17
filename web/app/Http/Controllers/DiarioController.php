@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PlantasController extends Controller
+class DiarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class PlantasController extends Controller
      */
     public function index()
     {
-        return view('planta.index');
+        //
     }
 
     /**
@@ -23,7 +23,7 @@ class PlantasController extends Controller
      */
     public function create()
     {
-        return view('planta.create');
+        //
     }
 
     /**

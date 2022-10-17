@@ -1,0 +1,8 @@
+.formulario_cadastro-planta{
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario_container{
+    margin: 1rem;
+}
