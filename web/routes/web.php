@@ -15,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('planta.index');
-});
+}); */
+Route::get('/', [PlantasController::class, 'index']);
 
 Route::get('/sobre', function(){
     return view('sobre.index');

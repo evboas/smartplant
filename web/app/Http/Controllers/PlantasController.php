@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Planta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,7 +15,7 @@ class PlantasController extends Controller
      */
     public function index()
     {
-        $planta = DB::select('SELECT (nome, tipo) FROM planta;');
+        $planta = Planta::all();
 
         return view('planta.index')->with('planta', $planta);
     }
@@ -40,7 +41,11 @@ class PlantasController extends Controller
         $nomePlanta = $request->input('identificacao_planta');
         $tipoPlanta = $request->input('tipo_planta');
 
-        DB::insert('INSERT INTO planta (nome, tipo) VALUES (?, ?)', [$nomePlanta, $tipoPlanta]);
+        $planta = new Planta();
+        $planta->nome = $nomePlanta;
+        $planta->tipo = $tipoPlanta;
+        $planta->save();
+
         return redirect('/');
     }
 

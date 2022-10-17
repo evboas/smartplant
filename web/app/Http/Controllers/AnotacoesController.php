@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Anotacao;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,7 +15,9 @@ class AnotacoesController extends Controller
      */
     public function index()
     {
-        return view('anotacoes.index');
+        $anotacoes = Anotacao::all();
+
+        return view('anotacoes.index')->with('anotacoes', $anotacoes);
     }
 
     /**
@@ -37,8 +40,12 @@ class AnotacoesController extends Controller
     {
         $nomePlanta = $request->input('identificacao_planta');
         $observacoesPlanta = $request->input('observacoes_planta');
+        
+        $anotacao = new Anotacao();
+        $anotacao->nome = $nomePlanta;
+        $anotacao->observacoes = $observacoesPlanta;
+        $anotacao->save();
 
-        DB::insert('INSERT INTO anotacoes (nome, observacoes) VALUES (?, ?)', [$nomePlanta, $observacoesPlanta]);
         return redirect('/anotacoes');
     }
 
