@@ -7,6 +7,33 @@
     font-weight: bold;
 }
 
+table {
+    border-collapse: collapse;
+    margin: 2rem;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td{
+    height: 2rem;
+}
+
+.tabela__anotacoes{
+    width: 95%;
+}
+
+.tabela__dados-nome{
+    padding-left: 1rem;
+    width: 80%;
+}
+
+.tabela__dados-data{
+    text-align: center;
+    width: auto;
+}
+
 .formulario__anotacoes{
     display: flex;
     flex-direction: column;
