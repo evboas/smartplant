@@ -24,5 +24,7 @@ Route::get('/sobre', function(){
 });
 
 Route::get('/anotacoes', [AnotacoesController::class, 'index']);
+Route::post('/anotacoes/salvar', [AnotacoesController::class, 'store']);
+Route::get('/anotacoes/criar', [AnotacoesController::class, 'create']);
 Route::get('/planta/criar', [PlantasController::class, 'create']);
 Route::post('/planta/salvar', [PlantasController::class, 'store']);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AnotacoesController extends Controller
 {
@@ -34,7 +35,11 @@ class AnotacoesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nomePlanta = $request->input('identificacao_planta');
+        $observacoesPlanta = $request->input('observacoes_planta');
+
+        DB::insert('INSERT INTO anotacoes (nome, observacoes) VALUES (?, ?)', [$nomePlanta, $observacoesPlanta]);
+        return redirect('/anotacoes');
     }
 
     /**

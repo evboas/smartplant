@@ -6,3 +6,18 @@
     text-decoration: none;
     font-weight: bold;
 }
+
+.formulario__anotacoes{
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario_container-observacoes{
+    display: flex;
+    flex-direction: row;
+}
+
+.formulario__botao-anotacoes{
+    align-self: center;
+    padding: .5rem;
+}
