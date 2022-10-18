@@ -38,13 +38,7 @@ class PlantasController extends Controller
      */
     public function store(Request $request)
     {
-        $nomePlanta = $request->input('identificacao_planta');
-        $tipoPlanta = $request->input('tipo_planta');
-
-        $planta = new Planta();
-        $planta->nome = $nomePlanta;
-        $planta->tipo = $tipoPlanta;
-        $planta->save();
+        Planta::create($request->all());
 
         return redirect('/');
     }

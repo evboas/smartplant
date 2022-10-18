@@ -2,8 +2,8 @@
     <form action="/anotacoes/salvar" class="formulario__anotacoes" method="POST">
         @csrf
         <div class="formulario_container">
-            <label for="identificacao_planta">Identificação da Planta:</label>
-            <input type="text" name="identificacao_planta" id="identificacao_planta">
+            <label for="nome">Identificação da Planta:</label>
+            <input type="text" name="nome" id="identificacao_planta">
         </div>
         
         <div class="formulario_container">
@@ -16,8 +16,8 @@
         </div>
         
         <div class="formulario_container formulario_container-observacoes">
-            <label for="observacoes_planta">Observações:</label>
-            <textarea name="observacoes_planta" id="observacoes_planta" cols="100" rows="10"></textarea>
+            <label for="observacoes">Observações:</label>
+            <textarea name="observacoes" id="observacoes_planta" cols="100" rows="10"></textarea>
         </div>
 
         <button type="submit" class="formulario__botao-anotacoes">Gravar</button>

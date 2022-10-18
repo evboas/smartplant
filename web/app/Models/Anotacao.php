@@ -9,4 +9,5 @@ class Anotacao extends Model
 {
     use HasFactory;
     protected $table = 'anotacoes';
+    protected $fillable = ['nome','observacoes'];
 }

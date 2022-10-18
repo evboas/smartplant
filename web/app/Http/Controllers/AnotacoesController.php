@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Anotacao;
+use App\Models\Planta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -38,13 +39,15 @@ class AnotacoesController extends Controller
      */
     public function store(Request $request)
     {
-        $nomePlanta = $request->input('identificacao_planta');
+        /* $nomePlanta = $request->input('identificacao_planta');
         $observacoesPlanta = $request->input('observacoes_planta');
         
         $anotacao = new Anotacao();
         $anotacao->nome = $nomePlanta;
         $anotacao->observacoes = $observacoesPlanta;
-        $anotacao->save();
+        $anotacao->save(); */
+
+        Anotacao::create($request->all());
 
         return redirect('/anotacoes');
     }
