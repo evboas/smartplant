@@ -33,13 +33,13 @@
     
             <ul class="barra-lateral__lista">
                 <li class="barra-lateral__item">
-                    <a href="/" class="barra-lateral__link">Home</a>
+                    <a href="{{route('plantas.index')}}" class="barra-lateral__link">Home</a>
                 </li>
                 <li class="barra-lateral__item">
-                    <a href="/planta/criar" class="barra-lateral__link">Cadastrar</a>
+                    <a href="{{route('plantas.create')}}" class="barra-lateral__link">Cadastrar</a>
                 </li>
                 <li class="barra-lateral__item">
-                    <a href="/anotacoes" class="barra-lateral__link">Anotações</a>
+                    <a href="{{route('anotacoes.index')}}" class="barra-lateral__link">Anotações</a>
                 </li>
                 <li class="barra-lateral__item">
                     <a href="/sobre" class="barra-lateral__link">Sobre</a>

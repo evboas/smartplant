@@ -1,6 +1,6 @@
 <x-layout title="Anotações">
     <button class="anotacoes__botao">
-        <a href="/anotacoes/criar" class="anotacoes__botao-texto">Criar Anotações</a>
+        <a href="{{route('anotacoes.create')}}" class="anotacoes__botao-texto">Criar Anotações</a>
     </button>
 
     <table class="tabela__anotacoes">

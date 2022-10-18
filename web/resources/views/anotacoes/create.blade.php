@@ -1,5 +1,5 @@
 <x-layout title="Criar anotações">
-    <form action="/anotacoes/salvar" class="formulario__anotacoes" method="POST">
+    <form action="{{route('anotacoes.store')}}" class="formulario__anotacoes" method="POST">
         @csrf
         <div class="formulario_container">
             <label for="nome">Identificação da Planta:</label>

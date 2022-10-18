@@ -1,5 +1,5 @@
 <x-layout title="Novo Registro">
-    <form action="/planta/salvar" method="POST" class="formulario_cadastro-planta">
+    <form action="{{route('plantas.store')}}" method="POST" class="formulario_cadastro-planta">
         @csrf
         <div class="formulario_container">
             <label for="nome">Identificação da planta:</label>

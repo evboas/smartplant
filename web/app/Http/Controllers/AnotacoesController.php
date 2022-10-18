@@ -49,7 +49,7 @@ class AnotacoesController extends Controller
 
         Anotacao::create($request->all());
 
-        return redirect('/anotacoes');
+        return to_route('anotacoes.index');
     }
 
     /**

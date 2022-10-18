@@ -40,7 +40,7 @@ class PlantasController extends Controller
     {
         Planta::create($request->all());
 
-        return redirect('/');
+        return to_route('plantas.index');
     }
 
     /**
