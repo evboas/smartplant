@@ -27,12 +27,16 @@ th, td{
 
 .tabela__dados-nome{
     padding-left: 1rem;
-    width: 80%;
+    width: 70%;
 }
 
 .tabela__dados-data{
     text-align: center;
     width: auto;
+}
+
+.tabela__dados-botoes{
+    width: 5%;
 }
 
 .formulario__anotacoes{
@@ -50,13 +54,32 @@ th, td{
     padding: .5rem;
 }
 
+.botoes__tabela{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.botao__editar-anotacao{
+    border-radius: 25%;
+    background-color: darkblue;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: .85rem;
+    padding: .1rem;
+    text-align: center;
+    text-decoration: none;
+    width: 1rem;
+}
+
 .botao__excluir-anotacao{
     border-radius: 25%;
     background-color: darkred;
     border: none;
     color: #ffffff;
     cursor: pointer;
-    margin: 0 .1rem 0 1rem;
     padding: .1rem;
+    text-align: center;
     width: 1rem;
 }

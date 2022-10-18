@@ -20,12 +20,15 @@
                 <tr>
                     <td class="tabela__dados-nome">{{$anotacao->nome}}</td>
                     <td class="tabela__dados-data">{{$anotacao->created_at}}</td>
-                    <td class="tabela__dados-remover">
-                        <form action="{{route('anotacoes.destroy', $anotacao->id)}}" method="POST" class="card__excluir">
-                            @csrf
-                            @method('DELETE')
-                            <button class="botao__excluir-anotacao">x</button>
-                        </form>
+                    <td class="tabela__dados-botoes">
+                        <span class="botoes__tabela">
+                            <a href={{ route('anotacoes.edit', $anotacao->id) }} class="botao__editar-anotacao">E</a>
+                            <form action="{{route('anotacoes.destroy', $anotacao->id)}}" method="POST" class="card__excluir">
+                                @csrf
+                                @method('DELETE')
+                                <button class="botao__excluir-anotacao">x</button>
+                            </form>
+                        </span>
                     </td>
                 </tr>
             @endforeach

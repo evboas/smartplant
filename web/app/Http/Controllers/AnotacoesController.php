@@ -70,7 +70,7 @@ class AnotacoesController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
