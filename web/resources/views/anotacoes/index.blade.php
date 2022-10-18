@@ -13,6 +13,13 @@
                 <tr>
                     <td class="tabela__dados-nome">{{$anotacao->nome}}</td>
                     <td class="tabela__dados-data">{{$anotacao->created_at}}</td>
+                    <td class="tabela__dados-remover">
+                        <form action="{{route('anotacoes.destroy', $anotacao->id)}}" method="POST" class="card__excluir">
+                            @csrf
+                            @method('DELETE')
+                            <button class="card__excluir-planta">x</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

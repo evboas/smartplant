@@ -92,8 +92,9 @@ class AnotacoesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        Anotacao::destroy($request->anotaco);
+        return to_route('anotacoes.index');
     }
 }
