@@ -4,20 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Planta;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class PlantasController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * 
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
+        $mensagemSucesso = session('mensagem.sucesso');
+
         $plantas = Planta::all();
 
-        return view('planta.index')->with('plantas', $plantas);
+        return view('planta.index')->with('plantas', $plantas)->with('mensagemSucesso', $mensagemSucesso);
     }
 
     /**
@@ -38,9 +39,8 @@ class PlantasController extends Controller
      */
     public function store(Request $request)
     {
-        Planta::create($request->all());
-
-        return to_route('plantas.index');
+        $planta = Planta::create($request->all());
+        return to_route('plantas.index')->with('mensagem.sucesso', "Planta '{$planta->nome}' foi adicionada com sucesso");
     }
 
     /**
@@ -80,12 +80,12 @@ class PlantasController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param \App\Models\Planta $planta
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(Planta $planta)
     {
-        Planta::destroy($request->planta);
-        return to_route('plantas.index');
+        $planta->delete();
+        return to_route('plantas.index')->with('mensagem.sucesso', "Planta '{$planta->nome}' removida com sucesso");
     }
 }

@@ -20,7 +20,7 @@
             <li class="sobre__estudantes"> EDUARDO VIEIRA VILAS BOAS  </li>
             <li class="sobre__estudantes"> JOEL PASSO MOREIRA </li>
             <li class="sobre__estudantes"> FILIPE BURTI GUELFI </li>
-            <li class="sobre__estudantes"> IURI GAGARI BASTOS VALBAO </li>
+            {{-- <li class="sobre__estudantes"> IURI GAGARI BASTOS VALBAO </li> --}}
         </ul> 
     </p>
 </x-layout>

@@ -1,4 +1,11 @@
 <x-layout title="Home">
+    
+    @isset($mensagemSucesso)
+        <div class="mensagem__alerta">
+            {{$mensagemSucesso}}
+        </div>
+    @endisset
+
     <div class="conteudo__cards">
         @foreach ($plantas as $planta)    
             <div class="card__planta">

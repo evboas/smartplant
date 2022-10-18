@@ -3,22 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Anotacao;
-use App\Models\Planta;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class AnotacoesController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * 
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
+        $mensagemSucesso = session('mensagem.sucesso');
         $anotacoes = Anotacao::all();
 
-        return view('anotacoes.index')->with('anotacoes', $anotacoes);
+        return view('anotacoes.index')->with('anotacoes', $anotacoes)->with('mensagemSucesso', $mensagemSucesso);;
     }
 
     /**
@@ -49,7 +48,7 @@ class AnotacoesController extends Controller
 
         Anotacao::create($request->all());
 
-        return to_route('anotacoes.index');
+        return to_route('anotacoes.index')->with('mensagem.sucesso', 'Anotação cadastrada com sucesso');
     }
 
     /**
@@ -89,12 +88,12 @@ class AnotacoesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Request $request
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request)
     {
         Anotacao::destroy($request->anotaco);
-        return to_route('anotacoes.index');
+        return to_route('anotacoes.index')->with('mensagem.sucesso', 'Anotação excluida com sucesso');
     }
 }

@@ -18,6 +18,14 @@ body, .conteudo{
     height: 100vh;
 }
 
+.mensagem__alerta{
+    background-color: var(--cor-barra-lateral);
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+}
+
 @media screen and (max-width: 768px) {
     .hidden-mobile{
         display: none;

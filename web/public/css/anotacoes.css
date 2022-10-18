@@ -1,4 +1,5 @@
 .anotacoes__botao{
+    margin-left: 2rem;
     padding: .5rem;
 }
 
@@ -47,4 +48,15 @@ th, td{
 .formulario__botao-anotacoes{
     align-self: center;
     padding: .5rem;
+}
+
+.botao__excluir-anotacao{
+    border-radius: 25%;
+    background-color: darkred;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    margin: 0 .1rem 0 1rem;
+    padding: .1rem;
+    width: 1rem;
 }
