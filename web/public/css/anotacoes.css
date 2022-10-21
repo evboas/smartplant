@@ -49,6 +49,10 @@ th, td{
     flex-direction: row;
 }
 
+.observacoes_planta{
+    padding: .5rem;
+}
+
 .formulario__botao-anotacoes{
     align-self: center;
     padding: .5rem;

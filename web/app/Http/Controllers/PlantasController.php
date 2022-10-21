@@ -60,9 +60,9 @@ class PlantasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Planta $planta)
     {
-        //
+        return view('planta.edit')->with('planta', $planta);
     }
 
     /**
@@ -72,9 +72,12 @@ class PlantasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Planta $planta, Request $request)
     {
-        //
+        $planta->fill($request->all());
+        $planta->save();
+
+        return to_route('plantas.index')->with('mensagem.sucesso', "Planta '{$planta->nome}' atualizada com sucesso");
     }
 
     /**

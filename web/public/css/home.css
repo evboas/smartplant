@@ -2,20 +2,6 @@
     display: flex;
 }
 
-.card__excluir{
-    align-self: flex-end;
-}
-
-.card__excluir-planta{
-    border-radius: 25%;
-    background-color: darkred;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-    padding: .1rem;
-    width: 1rem;
-}
-
 .card__planta{
     border: solid 1.5px #000000;
     border-radius: 1rem;
@@ -29,6 +15,38 @@
 
 .card__planta:hover{
     border: solid 2.5px var(--cor-bordas-hover);
+}
+
+.card__plantas-botoes{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__excluir{
+    align-self: flex-end;
+}
+
+.card__editar-planta{
+    border-radius: 25%;
+    background-color: darkblue;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: .85rem;
+    padding: .1rem;
+    text-align: center;
+    text-decoration: none;
+    width: 1rem;
+}
+
+.card__excluir-planta{
+    border-radius: 25%;
+    background-color: darkred;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: .1rem;
+    width: 1rem;
 }
 
 .card__planta-identificacao{

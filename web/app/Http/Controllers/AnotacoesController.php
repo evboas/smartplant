@@ -38,14 +38,6 @@ class AnotacoesController extends Controller
      */
     public function store(Request $request)
     {
-        /* $nomePlanta = $request->input('identificacao_planta');
-        $observacoesPlanta = $request->input('observacoes_planta');
-        
-        $anotacao = new Anotacao();
-        $anotacao->nome = $nomePlanta;
-        $anotacao->observacoes = $observacoesPlanta;
-        $anotacao->save(); */
-
         Anotacao::create($request->all());
 
         return to_route('anotacoes.index')->with('mensagem.sucesso', 'Anotação cadastrada com sucesso');
@@ -65,12 +57,12 @@ class AnotacoesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param Anotacao $anotaco
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Anotacao $anotaco)
     {
-        
+        return view('anotacoes.edit')->with('anotacao', $anotaco);
     }
 
     /**
@@ -80,9 +72,12 @@ class AnotacoesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Anotacao $anotaco,Request $request)
     {
-        //
+        $anotaco->fill($request->all());
+        $anotaco->save();
+        
+        return to_route('anotacoes.index')->with('mensagem.sucesso', 'Anotação editada com sucesso');
     }
 
     /**
