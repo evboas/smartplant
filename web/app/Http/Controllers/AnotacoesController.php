@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AnotacoesFormRequest;
 use App\Models\Anotacao;
 use Illuminate\Http\Request;
 
@@ -36,7 +37,7 @@ class AnotacoesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AnotacoesFormRequest $request)
     {
         Anotacao::create($request->all());
 
@@ -72,7 +73,7 @@ class AnotacoesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Anotacao $anotaco,Request $request)
+    public function update(Anotacao $anotaco,AnotacoesFormRequest $request)
     {
         $anotaco->fill($request->all());
         $anotaco->save();

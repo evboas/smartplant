@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PlantasFormRequest;
 use App\Models\Planta;
 use Illuminate\Http\Request;
 
@@ -37,7 +38,7 @@ class PlantasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PlantasFormRequest $request)
     {
         $planta = Planta::create($request->all());
         return to_route('plantas.index')->with('mensagem.sucesso', "Planta '{$planta->nome}' foi adicionada com sucesso");
@@ -72,7 +73,7 @@ class PlantasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Planta $planta, Request $request)
+    public function update(Planta $planta, PlantasFormRequest $request)
     {
         $planta->fill($request->all());
         $planta->save();

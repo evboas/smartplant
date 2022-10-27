@@ -55,6 +55,17 @@
     
         <main class="conteudo__principal">
             <h2 class="titulo__pagina">{{ $title }}</h2>
+            
+            @if ($errors->any())
+                <div class="alerta_erro">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            
             {{ $slot }}
         </main>
     </div>

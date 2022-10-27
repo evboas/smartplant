@@ -26,6 +26,18 @@ body, .conteudo{
     text-align: center;
 }
 
+.alerta_erro{
+    background-color: lightpink;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.alerta_erro ul{
+    list-style: none;
+}
+
 @media screen and (max-width: 768px) {
     .hidden-mobile{
         display: none;

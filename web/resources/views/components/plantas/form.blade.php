@@ -1,9 +1,9 @@
 <form action="{{ $action }}" method="POST" class="formulario_cadastro-planta">
     @csrf
 
-    @isset($nome)
+    @if($update)
         @method('PUT')
-    @endisset
+    @endif
 
     <div class="formulario_container">
         <label for="nome">Identificação da planta:</label>
