@@ -6,6 +6,7 @@ use App\Http\Requests\AnotacoesFormRequest;
 use App\Models\Anotacao;
 use App\Models\Planta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AnotacoesController extends Controller
 {
@@ -41,12 +42,14 @@ class AnotacoesController extends Controller
      */
     public function store(AnotacoesFormRequest $request)
     {
-        $anotacao = new Anotacao();
-        $anotacao->planta_id = Planta::where('nome', $request->nome)->first()->id;
-        $anotacao->nome = $request->nome;
-        $anotacao->estado = $request->estado_planta;
-        $anotacao->observacoes = $request->observacoes;
-        $anotacao->save();
+        DB::transaction(function() use ($request){
+            $anotacao = new Anotacao();
+            $anotacao->planta_id = Planta::where('nome', $request->nome)->first()->id;
+            $anotacao->nome = $request->nome;
+            $anotacao->estado = $request->estado_planta;
+            $anotacao->observacoes = $request->observacoes;
+            $anotacao->save();
+        });
         
         return to_route('anotacoes.index')->with('mensagem.sucesso', 'Anotação cadastrada com sucesso');
     }
