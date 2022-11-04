@@ -24,12 +24,14 @@ class AnotacoesFormRequest extends FormRequest
     public function rules()
     {
         return [
+            'nome' => 'required',
             'observacoes' => 'required'
         ];
     }
 
     public function messages(){
         return[
+            'nome.required' => 'Cadastre uma planta (em cadastrar) para registrar suas observações',
             'observacoes.required' => 'O campo de observações é obrigatório'
         ];
     }
