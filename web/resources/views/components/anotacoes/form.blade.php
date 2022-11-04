@@ -1,16 +1,22 @@
 <form action="{{ $action }}" class="formulario__anotacoes" method="POST">
     @csrf
 
-    @isset($nome)
+    @isset($planta)
         @method('PUT')
     @endisset
 
     <div class="formulario_container">
         <label for="nome">Identificação da Planta:</label>
-        <input type="text" name="nome" id="identificacao_planta"
-        @isset($nome)
-            value="{{$nome}}"
-        @endisset>
+        <select name="nome" id="identificacao_planta">
+            @foreach ($plantas as $planta)
+                <option value="{{$planta->nome}}" 
+                    @isset($nome)
+                        value="{{$planta->nome}}"
+                    @endisset>
+                    {{$planta->nome}}
+                </option>
+            @endforeach
+        </select>
     </div>
     
     <div class="formulario_container">

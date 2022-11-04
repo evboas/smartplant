@@ -9,5 +9,10 @@ class Anotacao extends Model
 {
     use HasFactory;
     protected $table = 'anotacoes';
-    protected $fillable = ['nome','observacoes'];
+    protected $fillable = ['nome', 'estado','observacoes'];
+
+    public function plantas()
+    {
+        return $this->belongsTo(Planta::class, 'planta_id');
+    }
 }

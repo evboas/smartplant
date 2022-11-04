@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('anotacoes', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+            $table->string('estado');
+            $table->foreignId('planta_id')->constrained('planta')->onDelete('cascade');
             $table->string('observacoes');
             $table->timestamps();
         });

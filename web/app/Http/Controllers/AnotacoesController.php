@@ -4,16 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AnotacoesFormRequest;
 use App\Models\Anotacao;
+use App\Models\Planta;
 use Illuminate\Http\Request;
 
 class AnotacoesController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * 
+     * @param Planta $planta
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Planta $planta)
     {
         $mensagemSucesso = session('mensagem.sucesso');
         $anotacoes = Anotacao::all();
@@ -28,7 +29,8 @@ class AnotacoesController extends Controller
      */
     public function create()
     {
-        return view('anotacoes.create');
+        $plantas = Planta::all();
+        return view('anotacoes.create')->with('plantas', $plantas);
     }
 
     /**
@@ -39,8 +41,13 @@ class AnotacoesController extends Controller
      */
     public function store(AnotacoesFormRequest $request)
     {
-        Anotacao::create($request->all());
-
+        $anotacao = new Anotacao();
+        $anotacao->planta_id = Planta::where('nome', $request->nome)->first()->id;
+        $anotacao->nome = $request->nome;
+        $anotacao->estado = $request->estado_planta;
+        $anotacao->observacoes = $request->observacoes;
+        $anotacao->save();
+        
         return to_route('anotacoes.index')->with('mensagem.sucesso', 'Anotação cadastrada com sucesso');
     }
 

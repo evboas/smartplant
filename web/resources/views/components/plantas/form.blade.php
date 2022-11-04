@@ -7,7 +7,7 @@
 
     <div class="formulario_container">
         <label for="nome">Identificação da planta:</label>
-        <input type="text" id="identificacao_planta" name="nome"
+        <input type="text" id="identificacao_planta" name="nome" autofocus
         @isset($nome)
             value="{{$nome}}"
         @endisset>

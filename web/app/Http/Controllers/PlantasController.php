@@ -50,9 +50,11 @@ class PlantasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Planta $planta)
     {
-        //
+        $anotacoes = $planta->anotacoes()->all();
+
+        return view('planta.show')->with('planta', $planta)->with('anotacoes', $anotacoes);
     }
 
     /**
@@ -63,6 +65,7 @@ class PlantasController extends Controller
      */
     public function edit(Planta $planta)
     {
+        
         return view('planta.edit')->with('planta', $planta);
     }
 

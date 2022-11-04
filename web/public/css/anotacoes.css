@@ -27,7 +27,13 @@ th, td{
 
 .tabela__dados-nome{
     padding-left: 1rem;
-    width: 70%;
+    width: 50%;
+}
+
+.tabela__dados-estado{
+    text-align: center;
+    padding-left: 1rem;
+    width: 20%;
 }
 
 .tabela__dados-data{

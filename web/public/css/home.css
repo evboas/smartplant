@@ -1,5 +1,6 @@
 .conteudo__cards{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .card__planta{
@@ -10,7 +11,7 @@
     margin: 1rem;
     padding: .5rem;
     transition: 100ms;
-    width: 30%;
+    width: 80%;
 }
 
 .card__planta:hover{
@@ -52,4 +53,23 @@
 .card__planta-identificacao{
     align-self: center;
     text-align: center;
+}
+
+.card__anotacoes{
+    align-self: center;
+    width:60%;
+}
+
+.card__anotacoes-botao{
+
+    background-color: lightblue;
+    border: none;
+    border-radius: .3rem;
+    padding: .3rem;
+    text-align: center;
+    width: 100%;
+}
+
+.card__anotacoes-botao:hover{
+    border: 1px solid #000000;
 }
