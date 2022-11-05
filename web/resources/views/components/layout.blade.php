@@ -45,7 +45,7 @@
                     <a href="/sobre" class="barra-lateral__link">Sobre</a>
                 </li>
                 <li class="barra-lateral__item">
-                    <a href="login.html" class="barra-lateral__link">
+                    <a href="{{route('logout')}}" class="barra-lateral__link">
                         <img src="{{asset('img/exit.svg')}}" class="img-sair">
                         Sair
                     </a>

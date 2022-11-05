@@ -49,6 +49,10 @@ body{
     width: 30%;
 }
 
+.login__cadastro{
+    margin-top: 1rem;
+}
+
 .texto__univesp{
     background-color: var(--cor-login);
     border: solid .2rem #000000;

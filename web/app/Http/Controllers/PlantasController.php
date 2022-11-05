@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PlantasFormRequest;
 use App\Models\Planta;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 
 class PlantasController extends Controller
