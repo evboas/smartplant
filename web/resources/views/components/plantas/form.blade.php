@@ -19,6 +19,13 @@
             value={{$tipo}}
         @endisset>
     </div>
+    <div class="formulario_container">
+        <label for="ip_planta">IP planta de planta:</label>
+        <input type="text" id="ip_planta_planta" name="ip_planta"
+        @isset($ip_planta)
+            value={{$ip_planta}}
+        @endisset>
+    </div>
 
     <button type="submit" class="envia__formulario">Cadastrar</button>
 </form>

@@ -11,7 +11,7 @@ class Planta extends Model
     use HasFactory;
 
     protected $table = 'planta';
-    protected $fillable = ['nome', 'tipo'];
+    protected $fillable = ['nome', 'tipo', 'ip_planta'];
 
     public function anotacoes()
     {
