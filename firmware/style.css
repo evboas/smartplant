@@ -1,0 +1,13 @@
+body{
+    margin-top: 80px;
+} 
+
+h1 {
+    color: darkgreen;
+    margin: 50px auto 50px;
+}
+
+p {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
