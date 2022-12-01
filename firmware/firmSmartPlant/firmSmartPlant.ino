@@ -91,7 +91,7 @@ void setup() {
 
 void loop() { 
   server.handleClient(); //Executa as ações do servidor
-  delay(20000);
+  delay(5000);
 }
 
 float lerTemperatura(){
