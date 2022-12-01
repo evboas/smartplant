@@ -13,7 +13,7 @@ const char* senha = "Senha_da_rede";
 
 //conexão com o servidor em caso de sucesso 
 void conectado() {
-  server.send(200, "text/html", html(lerTemperatura(), lerLuz()));     //Envia ao servidor, em formato HTML, o nosso script, com os parâmetros de pressão e temperatura
+  server.send(200, "text/html", html(lerTemperatura(), lerUmidade(), lerLuz()));     //Envia ao servidor, em formato HTML, o nosso script, com os parâmetros de pressão e temperatura
 }
 
 //conexão com o servidor em caso de falha 
@@ -21,7 +21,7 @@ void nao_encontrado() {
   server.send(404, "text/plain", "Não encontrado");
 }
 
-String html(float temperatura, String iluminacao){//, float luz) {
+String html(float temperatura, float umidade, String iluminacao){
   String cd = "<!DOCTYPE html>\n";
   cd += "<html lang=\"pt-br\">\n";
   cd += "<head>\n";
@@ -45,9 +45,9 @@ String html(float temperatura, String iluminacao){//, float luz) {
   cd += "<p>Temperatura: ";
   cd += (int)temperatura;
   cd += " °C</p>\n";
-  //cd += "<p>Umidade: ";
-  //cd += (int)umidade; 
-  //cd += " %</p>\n";
+  cd += "<p>Umidade: ";
+  cd += (int)umidade; 
+  cd += " %</p>\n";
   cd += "<p>Luz: ";
   cd += iluminacao;
   cd += "</p>\n";
