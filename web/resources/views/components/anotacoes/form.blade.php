@@ -1,16 +1,16 @@
 <form action="{{ $action }}" class="formulario__anotacoes" method="POST">
     @csrf
 
-    @isset($planta)
+    @if($update)
         @method('PUT')
-    @endisset
+    @endif
 
     <div class="formulario_container">
         <label for="nome">Identificação da Planta:</label>
         
         <select name="nome" id="identificacao_planta">
             @foreach ($plantas as $planta)
-                <option value="{{$planta->id}}" 
+                <option value="{{$planta->nome}}" 
                     @isset($idplanta)
                         @if($planta->id == $idplanta)
                             selected

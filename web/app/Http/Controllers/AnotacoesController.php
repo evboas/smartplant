@@ -84,9 +84,12 @@ class AnotacoesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Anotacao $anotaco,AnotacoesFormRequest $request)
+    public function update(Anotacao $anotaco,Request $request)
     {
-        $anotaco->fill($request->all());
+        $anotaco->planta_id = Planta::where('nome', $request->nome)->first()->id;
+        $anotaco->nome = $request->nome;
+        $anotaco->estado = $request->estado_planta;
+        $anotaco->observacoes = $request->observacoes;
         $anotaco->save();
         
         return to_route('anotacoes.index')->with('mensagem.sucesso', 'Anotação editada com sucesso');
