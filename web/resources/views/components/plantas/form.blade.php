@@ -1,6 +1,6 @@
 <form action="{{ $action }}" method="POST" class="formulario_cadastro-planta">
     @csrf
-
+    
     @if($update)
         @method('PUT')
     @endif

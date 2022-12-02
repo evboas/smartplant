@@ -77,7 +77,7 @@ class PlantasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Planta $planta, PlantasFormRequest $request)
+    public function update(Planta $planta, Request $request)
     {
         $planta->fill($request->all());
         $planta->save();

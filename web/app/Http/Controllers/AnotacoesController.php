@@ -53,7 +53,7 @@ class AnotacoesController extends Controller
         
         return to_route('anotacoes.index')->with('mensagem.sucesso', 'Anotação cadastrada com sucesso');
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -64,16 +64,17 @@ class AnotacoesController extends Controller
     {
         //
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
      * @param Anotacao $anotaco
      * @return \Illuminate\Http\Response
      */
-    public function edit(Anotacao $anotaco)
+    public function edit(Anotacao $anotaco, Planta $plantas)
     {
-        return view('anotacoes.edit')->with('anotacao', $anotaco);
+        $plantas = Planta::all();
+        return view('anotacoes.edit')->with('anotacao', $anotaco)->with('plantas', $plantas);
     }
 
     /**
