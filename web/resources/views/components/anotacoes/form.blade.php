@@ -14,8 +14,8 @@
                     @isset($idplanta)
                         @if($planta->id == $idplanta)
                             selected
-                        @endif>
-                    @endisset
+                        @endif
+                    @endisset>
                     {{$planta->nome}}
                 </option>
             @endforeach
