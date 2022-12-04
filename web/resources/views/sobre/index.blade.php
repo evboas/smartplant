@@ -22,5 +22,6 @@
             <li class="sobre__estudantes"> FILIPE BURTI GUELFI </li>
             {{-- <li class="sobre__estudantes"> IURI GAGARI BASTOS VALBAO </li> --}}
         </ul> 
+        <br> O grupo trabalhou sob a supervisão e orientação do professor Anderson Ramirez Kaltner. 
     </p>
 </x-layout>

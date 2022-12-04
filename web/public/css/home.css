@@ -4,14 +4,18 @@
 }
 
 .card__planta{
-    border: solid 1.5px #000000;
-    border-radius: 1rem;
+    box-shadow: 0 3px 9px 1px rgba(51 48 60 / 3%), 0 9px 8px rgb(51 48 60 / 2%), 0 1px 6px 4px rgb(51 48 60 / 1%);
+    color: rgba(51,48,60,0.68);
+    border: solid 1.5px;
+    border-color: rgba(75,70,92,0.12);
+    border-radius: 6px;
     display: flex;
     flex-direction: column;
     margin: 1rem;
-    padding: .5rem;
+    padding: 30px;
     transition: 100ms;
     width: 80%;
+    background-color: #ffffff;
 }
 
 .card__planta:hover{
@@ -29,25 +33,25 @@
 
 .card__editar-planta{
     border-radius: 25%;
-    background-color: darkblue;
+    background-color: #150578;
     border: none;
     color: #ffffff;
     cursor: pointer;
     font-size: .85rem;
-    padding: .1rem;
+    padding: 10px 14px 10px 14px;
     text-align: center;
     text-decoration: none;
-    width: 1rem;
+    
 }
 
 .card__excluir-planta{
     border-radius: 25%;
-    background-color: darkred;
+    background-color: #922D50;
     border: none;
     color: #ffffff;
     cursor: pointer;
-    padding: .1rem;
-    width: 1rem;
+    padding: 10px 14px 10px 14px;
+    
 }
 
 .card__planta-identificacao{
@@ -72,4 +76,25 @@
 
 .card__anotacoes-botao:hover{
     border: 1px solid #000000;
+}
+
+.nome_planta{
+    color: rgba(51,48,60,0.95);
+    font-family: Public Sans,sans-serif,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+.tipo_planta{
+    color: rgba(51,48,60,0.58);
+    font-family: Public Sans,sans-serif,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol;
+    padding: 0 0 0.25rem;
+    line-height: 1.5;
+    font-size: .875rem;
+    font-weight: 400;
+    letter-spacing: .0178571429em;
+    opacity: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: none;
+    white-space: nowrap;
 }

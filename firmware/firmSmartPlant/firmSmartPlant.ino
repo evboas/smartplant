@@ -42,13 +42,13 @@ String html(float temperatura, float umidade, String iluminacao){
   cd += "<body>\n";
   cd += "<div id=\"webpage\">\n";
   cd += "<h1>Dados dos sensores</h1>\n";
-  cd += "<p>Temperatura: ";
+  cd += "<p name='temperatura'>Temperatura: ";
   cd += (int)temperatura;
   cd += " °C</p>\n";
-  cd += "<p>Umidade: ";
+  cd += "<p name='umidade'>Umidade: ";
   cd += (int)umidade; 
   cd += " %</p>\n";
-  cd += "<p>Luz: ";
+  cd += "<p name='luz'>Luz: ";
   cd += iluminacao;
   cd += "</p>\n";
   cd += "</div>\n";

@@ -36,3 +36,5 @@ Route::post('/registrar', [UsersController::class, 'store'])->name('users.store'
 Route::resource('/plantas', PlantasController::class);
 
 Route::resource('/anotacoes', AnotacoesController::class);
+
+Route::resource('/ESP', ESPController::class);
